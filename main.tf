@@ -22,3 +22,8 @@ resource "snowflake_role" "role" {
   name    = "ROLE_TERRAFORM"
   comment = "ROLE for Snowflake Terraform demo"
 }
+
+resource "snowflake_role_grants" "grants" {
+  role_name = snowflake_role.role.role_terraform
+  users     = [snowflake_user.user.salexander]
+}
