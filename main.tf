@@ -24,7 +24,7 @@ resource "snowflake_role" "role" {
 }
 
 resource "snowflake_role_grants" "grants" {
-  provider  = snowflake.accountadmin
-  role_name = snowflake_role.role.role_terraform
-  users     = [snowflake_user.user.salexander]
+  provider  = snowflake.ACCOUNTADMIN
+  role_name = snowflake_role.role.ROLE_TERRAFORM
+  users     = [snowflake_user.user.SALEXANDER]
 }
