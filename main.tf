@@ -16,9 +16,6 @@ terraform {
 }
 
 provider "snowflake" {
-  account = "sfpscogs-salexander_aws_sbx"
-  username = "salexander"
-  role = "accountadmin"
 }
 
 resource "snowflake_role" "role" {
