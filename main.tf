@@ -24,6 +24,6 @@ resource "snowflake_role" "role" {
 }
 
 resource "snowflake_role_grants" "grants" {
-  role_name = snowflake_role.ROLE_TERRAFORM
-  users     = [snowflake_user.SALEXANDER]
+  role_name = "ROLE_TERRAFORM"
+  users     = ["SALEXANDER"]
 }
