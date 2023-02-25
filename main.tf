@@ -18,7 +18,7 @@ terraform {
 provider "snowflake" {
 }
 
-resource "snowflake_database" "demo_db" {
-  name    = "DEMO_TERRAFORM"
-  comment = "Database for Snowflake Terraform demo"
+resource "snowflake_role" "demo_role" {
+  name    = "ROLE_TERRAFORM"
+  comment = "ROLE for Snowflake Terraform demo"
 }
