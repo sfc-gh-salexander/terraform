@@ -16,7 +16,7 @@ terraform {
 }
 
 provider "snowflake" {
-    role  = "ACCOUNTADMIN"
+  role  = "ACCOUNTADMIN"
 }
 
 resource "snowflake_role" "demo_role" {
