@@ -16,8 +16,6 @@ terraform {
 }
 
 provider "snowflake" {
-  alias = "account_admin"
-  role  = "ACCOUNTADMIN"
 }
 
 resource "snowflake_role" "role" {
@@ -26,7 +24,6 @@ resource "snowflake_role" "role" {
 }
 
 resource "snowflake_role_grants" "grants" {
-  provider  = snowflake.account_admin
   role_name = snowflake_role.role.ROLE_TERRAFORM
   users     = [snowflake_user.user.SALEXANDER]
 }
