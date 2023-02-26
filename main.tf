@@ -42,6 +42,12 @@ resource "snowflake_warehouse_grant" "grant" {
   roles          = ["ROLE_TERRAFORM"]
 }
 
+resource "snowflake_warehouse_grant" "grant_usage" {
+  warehouse_name = "WH_TERRAFORM"
+  privilege      = "USAGE"
+  roles          = ["ROLE_TERRAFORM"]
+}
+
 resource "snowflake_database" "db" {
   name                        = "DB_TERRAFORM"
   comment                     = "Terraform Test"
