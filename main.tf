@@ -31,5 +31,5 @@ resource "snowflake_role_grants" "grants" {
 resource "snowflake_database" "db" {
   name                        = "DB_TERRAFORM"
   comment                     = "Terraform Test"
-  data_retention_days         = "1"
+  data_retention_time_in_days = "1"
 }
