@@ -28,13 +28,13 @@ resource "snowflake_role_grants" "grants" {
   users     = ["SALEXANDER"]
 }
 
-resource "snowflake_database" "DB" {
+resource "snowflake_database" "db" {
   name                        = "DB_TERRAFORM"
   comment                     = "Terraform Test"
   data_retention_days         = "1"
 }
 
-resource "snowflake_schema" "SCHEMA" {
+resource "snowflake_schema" "schema" {
   database                    = "DB_TERRAFORM"
   name                        = "SCHEMA_TERRAFORM"
   comment                     = "Terraform Test"
