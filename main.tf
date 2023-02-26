@@ -44,5 +44,5 @@ resource "snowflake_schema" "schema" {
 resource "snowflake_database_grant" "grant" {
     database          = "DB_TERRAFORM"
     privilege         = "USAGE"
-    roles             = [ROLE_TERRAFORM]
+    roles             = ["ROLE_TERRAFORM"]
 }
