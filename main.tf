@@ -64,3 +64,12 @@ resource "snowflake_table_grant" "grant" {
   on_future         = true
   with_grant_option = false
 }
+
+resource "snowflake_table_grant" "grant" {
+  database_name     = "DB_TERRAFORM"
+  schema_name       = "SCHEMA_TERRAFORM"
+  privilege         = "SELECT"
+  roles             = ["ROLE_TERRAFORM"]
+  on_future         = false
+  with_grant_option = false
+}
