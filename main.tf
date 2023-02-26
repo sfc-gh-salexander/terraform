@@ -28,6 +28,20 @@ resource "snowflake_role_grants" "grants" {
   users     = ["SALEXANDER"]
 }
 
+resource "snowflake_warehouse" "warehouse" {
+  name           = "WH_TERRAFORM"
+  comment        = "TERRAFORM TESTING"
+  warehouse_size = "xsmall"
+  auto_resume    = TRUE
+  auto_suspend   = 60
+}
+
+resource "snowflake_warehouse_grant" "grant" {
+  warehouse_name = "WH_TERRAFORM"
+  privilege      = "OPERATE"
+  roles          = ["ROLE_TERRAFORM"]
+}
+
 resource "snowflake_database" "db" {
   name                        = "DB_TERRAFORM"
   comment                     = "Terraform Test"
@@ -62,14 +76,5 @@ resource "snowflake_table_grant" "grant" {
   privilege         = "SELECT"
   roles             = ["ROLE_TERRAFORM"]
   on_future         = true
-  with_grant_option = false
-}
-
-resource "snowflake_table_grant" "grant_future" {
-  database_name     = "DB_TERRAFORM"
-  schema_name       = "SCHEMA_TERRAFORM"
-  privilege         = "SELECT"
-  roles             = ["ROLE_TERRAFORM"]
-  on_future         = false
   with_grant_option = false
 }
