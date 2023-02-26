@@ -27,3 +27,9 @@ resource "snowflake_role_grants" "grants" {
   role_name = "ROLE_TERRAFORM"
   users     = ["SALEXANDER"]
 }
+
+resource "snowflake_database" "DB" {
+  name                        = "PRD_MSCI_ENT_DB"
+  comment                     = "Terraform Test"
+  data_retention_time_in_days = "1"
+}
