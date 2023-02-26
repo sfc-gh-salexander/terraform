@@ -32,7 +32,7 @@ resource "snowflake_warehouse" "warehouse" {
   name           = "WH_TERRAFORM"
   comment        = "TERRAFORM TESTING"
   warehouse_size = "xsmall"
-  auto_resume    = TRUE
+  auto_resume    = true
   auto_suspend   = 60
 }
 
