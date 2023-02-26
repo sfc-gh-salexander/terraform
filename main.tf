@@ -65,7 +65,7 @@ resource "snowflake_table_grant" "grant" {
   with_grant_option = false
 }
 
-resource "snowflake_table_grant" "grant" {
+resource "snowflake_table_grant" "grant_future" {
   database_name     = "DB_TERRAFORM"
   schema_name       = "SCHEMA_TERRAFORM"
   privilege         = "SELECT"
