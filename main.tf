@@ -40,3 +40,9 @@ resource "snowflake_schema" "schema" {
   comment             = "Terraform Test"
   data_retention_days = "1"
 }
+
+resource "snowflake_database_grant" "grant" {
+    database_name     = "DB_TERRAFORM"
+    privilege         = "USAGE"
+    roles             = [ROLE_TERRAFORM]
+}
