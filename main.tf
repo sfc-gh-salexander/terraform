@@ -33,3 +33,10 @@ resource "snowflake_database" "db" {
   comment                     = "Terraform Test"
   data_retention_time_in_days = "1"
 }
+
+resource "snowflake_schema" "schema" {
+  database            = "DB_TERRAFORM"
+  name                = "SCHEMA_TERRAFORM"
+  comment             = "Terraform Test"
+  data_retention_days = "1"
+}
