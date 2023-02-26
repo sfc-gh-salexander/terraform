@@ -41,9 +41,9 @@ resource "snowflake_schema" "schema" {
   data_retention_days = "1"
 }
 
-resource "snowflake_database_grants" "grant" {
-  database_name = "db_terraform"
-  privilege = "USAGE"
-  roles = ["role_terraform"]
+resource "snowflake_database_grant" "grant" {
+  database_name     = "DB_TERRAFORM"
+  privilege         = "USAGE"
+  roles             = ["ROLE_TERRAFORM"]
   with_grant_option = false
 }
