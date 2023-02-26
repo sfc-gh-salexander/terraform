@@ -42,7 +42,7 @@ resource "snowflake_schema" "schema" {
 }
 
 resource "snowflake_database_grant" "grant" {
-  database_name = "DB_TERRAFORM"
+  database = "DB_TERRAFORM"
   privilege = "USAGE"
   roles = ["ROLE_TERRAFORM"]
   with_grant_option = false
