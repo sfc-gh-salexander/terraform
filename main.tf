@@ -1,8 +1,8 @@
 terraform {
   required_providers {
     snowflake = {
-      source  = "chanzuckerberg/snowflake"
-      version = "0.25.17"
+      source  = "Snowflake-Labs/terraform-provider-snowflake"
+      version = "0.51.0"
     }
   }
 
@@ -83,4 +83,9 @@ resource "snowflake_table_grant" "grant" {
   roles             = ["ROLE_TERRAFORM"]
   on_future         = true
   with_grant_option = false
+}
+
+resource "snowflake_role" "role_test" {
+  name    = "ROLE_TERRAFORM_TEST"
+  comment = "ROLE for Snowflake Terraform demo"
 }
