@@ -84,8 +84,3 @@ resource "snowflake_table_grant" "grant" {
   on_future         = true
   with_grant_option = false
 }
-
-resource "snowflake_role" "role_test" {
-  name    = "ROLE_TERRAFORM_TEST"
-  comment = "ROLE for Snowflake Terraform demo"
-}
